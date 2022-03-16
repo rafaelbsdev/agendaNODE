@@ -35,6 +35,10 @@ Contato.prototype.valida = function () {
 
   if (!this.body.email && !this.body.telefone)
     this.errors.push("Email ou Telefone precisam estar preenchidos.");
+
+  if (this.body.telefone.length > 11 || this.body.telefone.length < 9) {
+    this.errors.push("Telefone inválido");
+  }
 };
 
 Contato.prototype.cleanUp = function () {
